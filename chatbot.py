@@ -1,7 +1,15 @@
 import csv
+import math
 from fuzzywuzzy import process
 
 data = []
+
+sorry_messages = ["So its related to {}, any more information?",
+                  "Ah yes, {}, whats wrong with it?",
+                  "{}... whats the problem?",
+                  "Okay so {}, what about it",
+                  "So its the {}, tell me more"]
+
 
 with open('.\solutions.csv') as csv_file:
     csv_reader = csv.DictReader(csv_file, delimiter=',')
@@ -95,7 +103,7 @@ class ChatBot:
                 return
             print("Reset retries")
 
-            await self.stub_output("So it's related to {}, any more information?".format(subcat))
+            await self.stub_output(random.choice(sorry_messages).format(subcat))
 
             self.retry_counter = 0
             self.layer = self.layer[subcat]
