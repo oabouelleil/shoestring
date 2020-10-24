@@ -46,6 +46,6 @@ def virtual_response(audio_string):
     os.remove(audio_file)
 
 
-while True:
-    text = record_audio()
-    virtual_response(text)
+# while True:
+#     text = record_audio()
+#     virtual_response(text)
