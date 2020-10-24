@@ -24,7 +24,8 @@ class ChatBot:
     base_layer = {
         'EDM': {'thing go brr': {'F': ["If F, then undie"]},
                 'no powa': ["Also F"]
-                }
+                },
+        "CNC": {}
     }
     """
 
@@ -59,20 +60,20 @@ class ChatBot:
                 return
             print("Reset retries")
 
-            await self.stub_output(random.choice(sorry_messages).format(subcat))
-
             self.retry_counter = 0
             self.layer = self.layer[subcat]
-
 
             if not isinstance(self.layer, dict):
                 self.troubleshooting = True
                 await self.stub_output("Hmm.. lets try a few things")
+            else:
+                await self.stub_output(random.choice(sorry_messages).format(subcat))
+
         else:  # provide troubleshooting help
             print("Troubleshooting")
             if msg == "yes":
                 await self.stub_output("Bye!")
-                self.reset()
+                await self.reset()
                 return
             # print("i=")
             self.current_advice_index += 1
@@ -88,5 +89,5 @@ class ChatBot:
         problems = ', '.join(list(layer.keys()))
         await self.stub_output("Is it related to this? {}...".format(problems))
 
-    def reset(self):
+    async def reset(self):
         return
