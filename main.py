@@ -11,9 +11,8 @@ intents.voice_states = True
 
 client = discord.Client(intents=intents)
 
-current_voice_connection = [None]
-
 token = open("token.txt", "r").read()
+
 
 @client.event
 async def on_connect():
@@ -58,15 +57,20 @@ async def on_member_remove(member):
     voice_channel = discord.utils.get(member.guild.voice_channels, name=member.name)
     await voice_channel.delete(reason="Member Left Server")
 
+
 @client.event
 async def on_voice_state_update(member, before, after):
-    if current_voice_connection[0] is None:
-        print(current_voice_connection[0])
-    else:
-        print(current_voice_connection[0])
-        current_voice_connection[0].disconnect()
-    print(client.voice_clients)
-    current_voice_connection[0] = await after.channel.connect()
-
+    if after.channel is None:
+        for x in client.voice_clients:
+            if x.guild == member.guild:
+                await x.disconnect()
+        for vc in member.guild.voice_channels:
+            print(f"Checking {vc}")
+            if vc.members and vc.members[0].name != "ShoestringApp":
+                print(f"Members in {vc}, will join")
+                await discord.utils.get(member.guild.voice_channels, name=vc.name).connect()
+                break
+    elif not client.voice_clients:
+        await after.channel.connect()
 
 client.run(token)
