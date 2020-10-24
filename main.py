@@ -1,6 +1,8 @@
 import discord
 from tts import virtual_response
 from chatbot import ChatBot
+from fuzzywuzzy import process
+
 
 adjusted_noise = False
 
@@ -43,9 +45,13 @@ async def on_message(message):  # event that happens per any message.
         return
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     # virtual_response("hello")
-    if "hello" == message.content.lower():
+
+    restart_commands = ["hello", "restart", "reset"]
+    if process.extractOne(message.content.lower(), restart_commands)[1] > 60:
         user_chat_bots[message.author] = DiscordChatBot(message.author)
-        await message.author.send("Hey, do you have any issues I can help you with?")
+        problems = ', '.join(list(user_chat_bots[message.author].base_layer.keys()))
+        await message.author.send("Hey, do you have any issues I can help you with? I know about {}".format(problems))
+
         return
     await user_chat_bots[message.author].stub_input(message.content)
 
