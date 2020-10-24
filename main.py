@@ -13,6 +13,7 @@ client = discord.Client(intents=intents)
 
 current_voice_connection = [None]
 
+token = open("token.txt", "r").read()
 
 @client.event
 async def on_connect():
@@ -68,4 +69,4 @@ async def on_voice_state_update(member, before, after):
     current_voice_connection[0] = await after.channel.connect()
 
 
-client.run('NzY5NTA0ODE1OTYwMTYyMzM0.X5P_NA.YI_Zs3FiLMn-aIeLDv9Lz-Hs5B4')
+client.run(token)
