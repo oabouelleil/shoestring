@@ -3,6 +3,7 @@ import playsound
 import speech_recognition as sr
 import os
 import random
+
 adjusted_noise = False
 
 
@@ -46,6 +47,7 @@ def virtual_response(audio_string):
     os.remove(audio_file)
 
 
-# while True:
-#     text = record_audio()
-#     virtual_response(text)
+if __name__ == "__main__":
+    while True:
+        text = record_audio()
+        virtual_response(text)

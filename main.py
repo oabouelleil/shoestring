@@ -1,5 +1,6 @@
 import discord
 from tts import virtual_response
+from chatbot import ChatBot
 
 adjusted_noise = False
 
@@ -10,6 +11,18 @@ intents.members = True
 intents.voice_states = True
 
 client = discord.Client(intents=intents)
+
+
+class DiscordChatBot(ChatBot):
+
+    def __init__(self, author):
+        self.user = author
+
+    async def stub_output(self, msg):
+        await self.user.send(msg)
+
+
+user_chat_bots = {}  # Key:Author    Value:DiscordChatBot
 
 token = open("token.txt", "r").read()
 
@@ -26,14 +39,15 @@ async def on_ready():
 
 @client.event
 async def on_message(message):  # event that happens per any message.
+    if message.author.name == "ShoestringApp":
+        return
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     # virtual_response("hello")
-    if "hello" in message.content.lower():
-        await message.author.send("Hey")
-    if "voice" in message.content.lower():
-        print(f"{message.guild.voice_channels}")
-        voice_channel = discord.utils.get(message.guild.voice_channels, name="General")
-        await voice_channel.connect()
+    if "hello" == message.content.lower():
+        user_chat_bots[message.author] = DiscordChatBot(message.author)
+        await message.author.send("Hey, do you have any issues I can help you with?")
+        return
+    await user_chat_bots[message.author].stub_input(message.content)
 
 
 @client.event
@@ -72,5 +86,6 @@ async def on_voice_state_update(member, before, after):
                 break
     elif not client.voice_clients:
         await after.channel.connect()
+
 
 client.run(token)
