@@ -1,8 +1,7 @@
 import csv
 import random
 from fuzzywuzzy import process
-
-data = []
+from db_parser import gen_dict
 
 sorry_messages = ["So its related to {}, any more information?",
                   "Ah yes, {}, whats wrong with it?",
@@ -11,55 +10,7 @@ sorry_messages = ["So its related to {}, any more information?",
                   "So its the {}, tell me more"]
 
 
-with open('.\solutions.csv') as csv_file:
-    csv_reader = csv.DictReader(csv_file, delimiter=',')
-    line_count = 0
-    for row in csv_reader:
-        if line_count == 0:
-            # print(f'Column names are {", ".join(row)}')
-            line_count += 1
-        # print(f'\t{row["Index"]}, {row["solution"]}, {row["priorityValue"]}, {row["trouble"]}, {row["subTrouble"]}')
-        data.append([int(row["Index"]), row["solution"], int(row["priorityValue"]), row["trouble"], row["subTrouble"]])
-        line_count += 1
-    # print(f'Processed {line_count} lines.')
-
-
-def takePriority(elem):
-    return elem[2]
-
-
-def sortSolutions(arr):
-    arr.sort(key=takePriority, reverse=True)
-    # print("sortedData", arr)
-
-
-def incrementPriority(index, arr):
-    for row in arr:
-        if index == row[0]:
-            row[2] += 1
-            arr[index - 1] = row
-
-
-def separateTroubles(arr):
-    sepDict = {}
-    for row in arr:
-        if row[3] not in sepDict:  # if trouble not in dictionary
-            sepDict[f"{row[3]}"] = {}  # then create a new dictionary for trouble
-        if row[4] not in sepDict[f"{row[3]}"]:  # if subTrouble not in dictionary
-            sepDict[f"{row[3]}"][f"{row[4]}"] = []  # then create a new array for subtrouble
-        sepDict[f"{row[3]}"][f"{row[4]}"].append(row[1])  # append to that subtrouble if subtrouble already exists
-    return sepDict
-
-
-incrementPriority(1, data)
-sortSolutions(data)
-finalDict = separateTroubles(data)
-
-with open("solutions1.csv", mode="w", newline="") as solutionsFile:
-    solutionsWriter = csv.writer(solutionsFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    solutionsWriter.writerow(["Index", "solution", "priorityValue", "trouble", "subTrouble"])
-    for row in data:
-        solutionsWriter.writerow(row)
+db_dict = gen_dict('./db/')
 
 
 ##############################
@@ -69,11 +20,16 @@ class ChatBot:
     RETRY_LIMIT = 2
 
     # problems and solutions
+    """
     base_layer = {
         'EDM': {'thing go brr': {'F': ["If F, then undie"]},
                 'no powa': ["Also F"]
                 }
     }
+    """
+
+    base_layer = db_dict
+
 
     layer = base_layer  # which layer of the nested dict we are atm
     topic = ""

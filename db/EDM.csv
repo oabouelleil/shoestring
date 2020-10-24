@@ -1,0 +1,36 @@
+Index,solution,priorityValue,trouble,subTrouble
+1,Check Power Input,0,No Power Input,No Main Power Switch
+2,Connect all lines closely,0,No Power Input,Power Lines Loosened
+3,Reset it,0,No Power Input,Set Emergency Stop
+4,Check Power Input,0,Discharge Hunting,Line of Electrode
+5,Enable it,0,Discharge Hunting,If Not ON State
+6,Adjust the value,0,Discharge Hunting,Value of GAP is too low
+7,Loosen the Electrode,0,Discharge Unstable,Error Operation
+8,Negative Discharge,0,Discharge Unstable,Error Operation
+9,Bad Servo sensibility,0,Discharge Unstable,Error Operation
+10,Check Discharge Condition,0,Discharge Unstable,Error Operation
+11,Unsuitable Oil supply,0,Discharge Unstable,Error Operation
+12,Loosen the Electrode Head,0,Discharge Unstable,Mechanical Error
+13,Conveyer Belt is too tight or too lose,0,Discharge Unstable,Mechanical Error
+14,Connect all lines closely,0,Easy to Deposit Carbon,Power Lines Loosened
+15,Negative Discharge,0,Easy to Deposit Carbon,Error Operation
+16,Unfit servo sensibility,0,Easy to Deposit Carbon,Error Operation
+17,Wrong discharge condition ,0,Easy to Deposit Carbon,Error Operation
+18,Adjust parameters greatly,0,Easy to Deposit Carbon,Error Operation
+19,Wrong mode to supply oil,0,Easy to Deposit Carbon,Error Operation
+20,Loosen the Electrode Head,0,Easy to Deposit Carbon,Mechanical Error
+21,Conveyer Belt is too tight or too lose,0,Easy to Deposit Carbon,Mechanical Error
+22,Adjust the oil position and oil mass,0,Anti fire start while start discharging,Flame Appeared
+23,Current is too large,0,Anti fire start while start discharging,Flame Appeared
+24,Adjust the sensibility of anti-fire,0,Anti fire start while start discharging,Is the machine in direct sunlight/shined on
+25,Move the machine out of sunshine,0,Anti fire start while start discharging,Is the machine in direct sunlight/shined on
+26,Tighten the connectors,0,Trouble with DRO,If the connectors of the cable are loose
+27,Change the Digital Ruler,0,Trouble with DRO,"Check that if it counts or not at a certain position at ""Repeat Position"" mode"
+28,Communicate with the supplier and change the ruler,0,Trouble with DRO,Check the Ruler
+29,Check if Oil pump runs in an anti-clockwise direction ,0,No processing oil,Check if oil pump still runs or not
+30,Short of Processing Oil,0,No processing oil,Check if oil pump still runs or not
+31,There is no oil in the oil hole of oil pump,0,No processing oil,Check if oil pump still runs or not
+32,Something jammed into the oil pump,0,No processing oil,Check if oil pump still runs or not
+33,Trouble with oil pump,0,No processing oil,Check if oil pump still runs or not
+34,Check if power connectors are loosened,0,No processing oil,No power input to oil pump
+35,"Oil Pump has been over loaded, enable it",0,No processing oil,No power input to oil pump
