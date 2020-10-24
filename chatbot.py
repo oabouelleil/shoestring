@@ -1,4 +1,5 @@
 import csv
+from fuzzywuzzy import process
 
 data = []
 
@@ -51,7 +52,7 @@ with open("solutions1.csv", mode = "w", newline = "") as solutionsFile:
 
 
 
-from fuzzywuzzy import process
+
 
 # best match minimum threshold
 MATCH_CONFIDENCE_THRESHOLD = 50
