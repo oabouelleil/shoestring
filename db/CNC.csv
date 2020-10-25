@@ -1,53 +1,53 @@
 Index,solution,priorityValue,trouble,subTrouble
-1,Check air pressure,0,Tool magazine(Umbrella type),Noise for changing
-2,Check the milling chuck pull stud model changing ,0,Tool magazine(Umbrella type),Noise for changing
-3,Check cylindrical travel,0,Tool magazine(Umbrella type),Noise for changing
-4,Check the oil input,0,Tool magazine(Umbrella type),Noise for changing
-5,Check air pressure,0,Tool magazine(Umbrella type),Can't change the tool
-6,"Check the tool magazine manually, if can't move, check the circuit breaker",0,Tool magazine(Umbrella type),Can't change the tool
-7,Check if tool magazine motor phase is right or not,0,Tool magazine(Umbrella type),Can't change the tool
-8,Check if the limit switch of tool loosening is in right position,0,Tool magazine(Umbrella type),Can't change the tool
-9,Check if the sensor switch is right or not,0,Tool magazine(Umbrella type),Can't change the tool
-10,"Check if the tools is hit or the reference point is changing, adjust 3-axis parameter according to P 2038(MITSUBISHI) or P1241(FANUC)",0,Tool magazine(Umbrella type),Can't change the tool
-11,Check if the motor phase,0,Tool magazine(Umbrella type),Tool number in chaos
-12,"Reset the tool magazine, and re-perform the procedure.",0,Tool magazine(Umbrella type),Tool number in chaos
-13,Adjust the tool counter,0,Tool magazine(Umbrella type),Took magazine keep rotation
-14,"Set Feed Rate knob as 0 under HANDWHEEL model, press  RESET to get the tool magazine back.",0,Tool magazine(Umbrella type),Tool magazine not drawing back
-15,Check air pressure,0,Trouble Shoot(Arm type),Noise for tool changing
-16,Check the milling chuck pull stud model changing ,0,Trouble Shoot(Arm type),Noise for tool changing
-17,Check cylindrical travel,0,Trouble Shoot(Arm type),Noise for tool changing
-18,"Adjust the second reference position, spindle positioning angle, spindle tool positioning, spindle tool switch positioning etc.",0,Trouble Shoot(Arm type),Noise for tool changing
-19,Check the air pressure,0,Trouble Shoot(Arm type),Can't change the tool
-20,"Check the tool magazine manually, if can’t move, check the circuit breaker",0,Trouble Shoot(Arm type),Can't change the tool
-21,Check if tool magazine motor phase is right or not,0,Trouble Shoot(Arm type),Can't change the tool
-22,Check if the brake is too tight or too loosen,0,Trouble Shoot(Arm type),Can't change the tool
-23,Check the tool sleeve’s tolerance ,0,Trouble Shoot(Arm type),Can't change the tool
-24,"Arm not back to zero, adjust the arm screw to ZERO point, when the power on is ok.",0,Trouble Shoot(Arm type),Can't change the tool
-25,"Set Feed Rate knob as 0 under HANDWHEEL model, press  RESET to get the tool magazine back.",0,Trouble Shoot(Arm type),Tool magazine not drawing back
-26,"Press ""O.T.REL” key, use the handwheel rotate the axis to reverse direction.",0,Axis Trouble,Over limited
-27,Check if the limit switch is broken.,0,Axis Trouble,Over limited
-28,Check the limit switch is right set in the software or not ,0,Axis Trouble,Can't back to zero
-29,Adjust or replace the ZERO block or SWITCH ,0,Axis Trouble,Can't back to zero
-30,Clean the axis cover,0,Axis Trouble,Noise for Axis
-31,Change the bearing,0,Axis Trouble,Noise for Axis
-32,"If it is from Z axis, check it is loosen for the hammer and guide way is loosen or not. Check if the hammer chain and guide wheel is wearing or not.",0,Axis Trouble,Noise for Axis
-33,Lubricate the spindle belt,0,Spindle Trouble,Spindle Noise
-34,Adjust the belt tension,0,Spindle Trouble,Spindle Noise
-35,Replace the spindle belt or spindle.,0,Spindle Trouble,Spindle Noise
-36,Check if the coolant liquid is enough or not.,0,Coolant Pump Trouble,Can’t drain
-37,Input water to exclude the air inside the coolant tank,0,Coolant Pump Trouble,Can’t drain
-38,Check the power sequence,0,Coolant Pump Trouble,Can’t drain
-39,Check the thermal relay,0,Coolant Pump Trouble,Can’t drain
-40,Replace the coolant,0,Coolant Pump Trouble,Can’t drain
-41,Check if the lubrication oil is enough or not.,0,Lubrication pump Trouble ,Lubrication pump Trouble 
-42,Check the oil filter,0,Lubrication pump Trouble ,Lubrication pump Trouble 
-43,Check if the oil is SHELL TONA68 or equal one,0,Lubrication pump Trouble ,Lubrication pump Trouble 
-44,Adjust or replace the valve.,0,Lubrication pump Trouble ,Lubrication pump Trouble 
-45,Replace the pump,0,Lubrication pump Trouble ,Lubrication pump Trouble 
+1,Check air pressure,0,Tool magazine (Umbrella type),Noise for changing
+2,Check the milling chuck pull stud model changing ,0,Tool magazine (Umbrella type),Noise for changing
+3,Check cylindrical travel,0,Tool magazine (Umbrella type),Noise for changing
+4,Check the oil input,0,Tool magazine (Umbrella type),Noise for changing
+5,Check air pressure,0,Tool magazine (Umbrella type),Can't change the tool
+6,"Check the tool magazine manually, if can't move, check the circuit breaker",0,Tool magazine (Umbrella type),Can't change the tool
+7,Check if tool magazine motor phase is right or not,0,Tool magazine (Umbrella type),Can't change the tool
+8,Check if the limit switch of tool loosening is in right position,0,Tool magazine (Umbrella type),Can't change the tool
+9,Check if the sensor switch is right or not,0,Tool magazine (Umbrella type),Can't change the tool
+10,"Check if the tools is hit or the reference point is changing, adjust 3-axis parameter according to P 2038(MITSUBISHI) or P1241(FANUC)",0,Tool magazine (Umbrella type),Can't change the tool
+11,Check if the motor phase,0,Tool magazine (Umbrella type),Tool number in chaos
+12,"Reset the tool magazine, and re-perform the procedure.",0,Tool magazine (Umbrella type),Tool number in chaos
+13,Adjust the tool counter,0,Tool magazine (Umbrella type),Took magazine keep rotation
+14,"Set Feed Rate knob as 0 under HANDWHEEL model, press  RESET to get the tool magazine back.",0,Tool magazine (Umbrella type),Tool magazine not drawing back
+15,Check air pressure,0,Trouble Shoot (Arm type),Noise for tool changing
+16,Check the milling chuck pull stud model changing ,0,Trouble Shoot (Arm type),Noise for tool changing
+17,Check cylindrical travel,0,Trouble Shoot (Arm type),Noise for tool changing
+18,"Adjust the second reference position, spindle positioning angle, spindle tool positioning, spindle tool switch positioning etc.",0,Trouble Shoot (Arm type),Noise for tool changing
+19,Check the air pressure,0,Trouble Shoot (Arm type),Can't change the tool
+20,"Check the tool magazine manually, if can’t move, check the circuit breaker",0,Trouble Shoot (Arm type),Can't change the tool
+21,Check if tool magazine motor phase is right or not,0,Trouble Shoot (Arm type),Can't change the tool
+22,Check if the brake is too tight or too loosen,0,Trouble Shoot (Arm type),Can't change the tool
+23,Check the tool sleeve’s tolerance ,0,Trouble Shoot (Arm type),Can't change the tool
+24,"Arm not back to zero, adjust the arm screw to ZERO point, when the power on is ok.",0,Trouble Shoot (Arm type),Can't change the tool
+25,"Set Feed Rate knob as 0 under HANDWHEEL model, press  RESET to get the tool magazine back.",0,Trouble Shoot (Arm type),Tool magazine not drawing back
+26,"Press ""O.T.REL” key, use the handwheel rotate the axis to reverse direction.",0,Axis ,Over limited
+27,Check if the limit switch is broken.,0,Axis ,Over limited
+28,Check the limit switch is right set in the software or not ,0,Axis ,Can't back to zero
+29,Adjust or replace the ZERO block or SWITCH ,0,Axis ,Can't back to zero
+30,Clean the axis cover,0,Axis ,Noise for Axis
+31,Change the bearing,0,Axis ,Noise for Axis
+32,"If it is from Z axis, check it is loosen for the hammer and guide way is loosen or not. Check if the hammer chain and guide wheel is wearing or not.",0,Axis ,Noise for Axis
+33,Lubricate the spindle belt,0,Spindle ,Spindle Noise
+34,Adjust the belt tension,0,Spindle ,Spindle Noise
+35,Replace the spindle belt or spindle.,0,Spindle ,Spindle Noise
+36,Check if the coolant liquid is enough or not.,0,Coolant Pump ,Can’t drain
+37,Input water to exclude the air inside the coolant tank,0,Coolant Pump ,Can’t drain
+38,Check the power sequence,0,Coolant Pump ,Can’t drain
+39,Check the thermal relay,0,Coolant Pump ,Can’t drain
+40,Replace the coolant,0,Coolant Pump ,Can’t drain
+41,Check if the lubrication oil is enough or not.,0,Lubrication pump  ,Lubrication pump Trouble 
+42,Check the oil filter,0,Lubrication pump  ,Lubrication pump Trouble 
+43,Check if the oil is SHELL TONA68 or equal one,0,Lubrication pump  ,Lubrication pump Trouble 
+44,Adjust or replace the valve.,0,Lubrication pump  ,Lubrication pump Trouble 
+45,Replace the pump,0,Lubrication pump  ,Lubrication pump Trouble 
 46,Explanation: Emergency stop\nSolution: Check if X8.4 is written or not.,0,Error Code,1000. EMG STOP OR OVERTRAVE 
 47,Explanation: Axis not home\nSolution: Use handwheel moveaxis back home.,0,Error Code,1001. AXIS NOT HOME 
 48,"Explanation: Machine Alarm\nSolution: System alarming, check manual for FANUC/MITSUBISHI",0,Error Code,1002. MC OL 
-49,Explanation: Lubrication oil alarm\nSolution: Input the oil or replace the pump,0,Error Code,1003. LUBE LEVLE LOW 
+49,Explanation: Lubrication oil alarm\nSolution: Input the oil or replace the pump,0,Error Code,1003. LUBE LEVEL
 50,Explanation: Low air pressure\nSolution: Check air pressure,0,Error Code,1004. AIR PRESSURE LOW 
 51,Explanation: Spindle oil Coolant\nSolution: Input spindle coolant oil or replace the oil.,0,Error Code,1005. SP COOLER ALARM 
 52,Explanation: Oil pressure Low-Chose function\nSolution: Input oil,0,Error Code,1006. HYDRAULIC PUMP PRESSURE LOW
@@ -58,7 +58,7 @@ Index,solution,priorityValue,trouble,subTrouble
 57,Explanation: Tool magazine motor is over loaded\nSolution: Check the thermal relay inside the electric cabinet,0,Error Code,1011. ATC MOTOR OL
 58,Explanation: Coolant motor over loaded\nSolution: Check the thermal relay inside the electric cabinet,0,Error Code,1012. COOLANT MOTOR OL
 59,Explanation: Check chip conveyor motor over loaded\nSolution: Check the thermal relay inside the electric cabinet,0,Error Code,1013. CHIP CONVEYOR OL
-60,Explanation: T code error\nSolution: Check T code,0,Error Code,1016. T CODE ERROR
+60,Explanation: T code error\nSolution: Check T code,0,Error Code,1016. T CODE 
 61,Explanation: Spindle is not positioned\nSolution: Move Z axis downward manually until the alarm disappear,0,Error Code,1017. SPINDLE NOT ORIENTATION
 62,Explanation: The arm is NOTin middle position\nSolution: Move the arm manually,0,Error Code,1018. ARM NOTIN ORIGIN
 63,Explanation: No signal for the arm\nSolution: Check if the sensors are broken or not,0,Error Code,1018. ARM NOTIN ORIGIN
@@ -69,12 +69,12 @@ Index,solution,priorityValue,trouble,subTrouble
 68,Explanation: Tool collets cannot go down\nSolution: Check the circuit,0,Error Code,1022. TOOL POT NOT DOWN
 69,Explanation: Arm 90degree error\nSolution: Replace the sensor,0,Error Code,1023. ARM 90 ERROR 
 70,Explanation: Tool unclamp\nSolution: Check the limit switch of tool loosen,0,Error Code,1025. TOOL NOT UNCLAMP
-71,Explanation: Arm-270degree Error\nSolution: Check the sensor switch,0,Error Code,1026. ARM 270 ERROR
+71,Explanation: Arm-270degree Error\nSolution: Check the sensor switch,0,Error Code,1026. ARM 270 
 72,Explanation: Tool collets cannot go upward\nSolution: Check sensor switch and circuit,0,Error Code,1027. TOOL POT NOT UP
 73,Explanation: Arm JOG mode error\nSolution: Re-start the controller,0,Error Code,1028. ARM JOG MODE 
 74,Explanation: Tool is not clamp well\nSolution: Check the limit switch,0,Error Code,1029. TOOL NOT CLAMP 
 75,Explanation: Arm home point error\nSolution: Check the sensor switch,0,Error Code,1030. ARM HOME POS ERROR
-76,"Explanation: ATC limit error\nSolution: Check the spindle tool loosen/clamp can test the signal at the same time, adjust the limit position.",0,Error Code,1031. ATC LS ERROR
+76,"Explanation: ATC limit error\nSolution: Check the spindle tool loosen/clamp can test the signal at the same time, adjust the limit position.",0,Error Code,1031. ATC LS 
 77,Explanation: TCODE= Spindle tool\nSolution: Reset the tool magazine when Tcode is not equal to spindle tool,0,Error Code,1032. T CODE = SP 
 78,Explanation: Door is not close\nSolution: Shut the door,0,Error Code,2000. DOOR NOT CLOSE
 79,Explanation: The 4th axis is not clamped\nSolution: Clamp the 4th well,0,Error Code,2001. 4 AXIS CLAMP
