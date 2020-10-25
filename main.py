@@ -51,8 +51,9 @@ async def on_message(message):  # event that happens per any message.
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     # virtual_response("hello")
 
-    restart_commands = ["help", "hello", "restart", "reset", "hey", "howdy", "what's up"]  # IMPLEMENT HELP IF [0] IS HELP, THEN HELP
+    restart_commands = ["help", "hello", "restart", "reset"]
     match = process.extractOne(message.content.lower(), restart_commands)
+    print("restart match: {}".format(match[1]))
     if match[1] > 60:
         if match[0] == restart_commands[0]:
             await user_chat_bots[message.author].print_help(user_chat_bots[message.author].layer)
