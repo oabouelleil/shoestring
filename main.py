@@ -51,7 +51,7 @@ async def on_message(message):  # event that happens per any message.
     match = process.extractOne(message.content.lower(), restart_commands)
     if match[1] > 60:
         if match[0] == restart_commands[0]:
-            await user_chat_bots[message.author].print_help()
+            await user_chat_bots[message.author].print_help(user_chat_bots[message.author].layer)
             return
         user_chat_bots[message.author] = DiscordChatBot(message.author)
         problems = ', '.join(list(user_chat_bots[message.author].base_layer.keys()))
