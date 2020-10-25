@@ -94,8 +94,8 @@ class ChatBot:
                 await self.stub_output("Did that work?")
             else:
                 await self.stub_output("", img_name="sad.gif")
-                await self.stub_output("Sorry I'm not too sure how to help :( Try speaking to a human if the videos "
-                                       "below don't help.")
+                await self.stub_output("Sorry I'm not too sure how to help :( You can connect to a technician if the "
+                                       "videos below don't help.")
                 search = SearchVideos(self.prevcat, offset=1, mode="dict", max_results=2)
                 search = search.result()
                 for i in range(2):
