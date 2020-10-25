@@ -1,7 +1,6 @@
 import discord
-from tts import virtual_response
-from chatbot import ChatBot
 from fuzzywuzzy import process
+from chatbot import ChatBot
 
 adjusted_noise = False
 
@@ -71,7 +70,7 @@ async def on_member_join(member):
         member.guild.me: discord.PermissionOverwrite(read_messages=True),
         member: discord.PermissionOverwrite(read_messages=True)
     }
-    voice_channel = await member.guild.create_voice_channel(member.name, overwrites=overwrites)
+    await member.guild.create_voice_channel(member.name, overwrites=overwrites)
 
     print(f"{member} joined the {member.guild} server")
 

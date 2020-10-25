@@ -1,5 +1,5 @@
-import json
 import csv
+import json
 import os
 
 
@@ -67,10 +67,10 @@ def update_db(data):  # updates priority values
 
 
 # import me! base_layer = gen_dict('./db/)
-def gen_dict(dir):
+def gen_dict(directory):
     base_layer = {}
-    for filename in os.listdir(dir):
-        data = parse_db(dir + filename)
+    for filename in os.listdir(directory):
+        data = parse_db(directory + filename)
 
         increment_priority(1, data)
         sort_solutions(data)

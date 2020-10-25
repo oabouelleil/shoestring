@@ -1,6 +1,7 @@
-import csv
 import random
+
 from fuzzywuzzy import process
+
 from db_parser import gen_dict
 
 sorry_messages = ["So its related to {}, any more information?",
