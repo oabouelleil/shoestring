@@ -16,6 +16,7 @@ playsound==1.2.2
 PyAudio @ https://download.lfd.uci.edu/pythonlibs/x2tqcw5k/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
 pycparser==2.20
 pynacl==1.4.0
+python-Levenshtein==0.12.0
 requests==2.24.0
 six==1.15.0
 soupsieve==2.0.1

@@ -25,7 +25,7 @@ class ChatBot:
 
     def __init__(self):
         # best match minimum threshold
-        self.MATCH_CONFIDENCE_THRESHOLD = 50
+        self.MATCH_CONFIDENCE_THRESHOLD = 64
         self.RETRY_LIMIT = 2
         self.db_dict = gen_dict('./db/')
         self.base_layer = self.db_dict
@@ -39,15 +39,19 @@ class ChatBot:
     async def stub_input(self, msg):
         if not self.troubleshooting:
             confidence = 100
+            prevcat = ""
+            looping = False
             while confidence >= self.MATCH_CONFIDENCE_THRESHOLD:
-                print("Not troubleshooting")
-                match = process.extractOne(msg, self.layer.keys())
-                subcat = match[0]
-                confidence = match[1]
+                match = process.extract(msg, self.layer.keys())
+                subcat = match[0][0]
+                confidence = match[0][1]
+                confidence_difference = match[0][1] - match[1][1]
+                print("Not troubleshooting: {}".format(subcat))
 
                 if confidence < self.MATCH_CONFIDENCE_THRESHOLD:
-                    print("Low confidence")
-                    await self.stub_output("Sorry, didnt get that.")
+                    print("Low confidence {}".format(confidence))
+                    if not looping:
+                        await self.stub_output("Sorry, didnt get that.")
                     self.retry_counter += 1
 
                     if self.retry_counter > self.RETRY_LIMIT:
@@ -55,6 +59,11 @@ class ChatBot:
                         await self.print_help(self.layer)
                     return
                 print("{} Reset retries, confidence {}".format(subcat, confidence))
+
+                if confidence_difference < 5:
+                    print("Confidence difference only {}, asking user".format(confidence_difference))
+                    await self.stub_output(random.choice(sorry_messages).format(prevcat))
+                    return
 
                 self.retry_counter = 0
                 self.layer = self.layer[subcat]
@@ -64,8 +73,10 @@ class ChatBot:
                     print(subcat)
                     await self.stub_output("Hmm.. lets try a few things")
                     return
-                else:
+                elif not looping:
                     await self.stub_output(random.choice(sorry_messages).format(subcat))
+                    prevcat = subcat
+                looping = True
 
         else:  # provide troubleshooting help
             print("Troubleshooting")
@@ -75,9 +86,11 @@ class ChatBot:
                 return
 
             self.current_advice_index += 1
-            if self.current_advice_index <= len(self.layer):  # Double check whether it should be < or <=
+            if self.current_advice_index < len(self.layer):
                 await self.stub_output(self.layer[self.current_advice_index])
                 await self.stub_output("Did that work?")
+            else:
+                await self.stub_output("Sorry I'm not too sure how to help :( Try speaking to a human.")
 
     # discord bot should implement exit functionality and input validations
     async def stub_output(self, msg):

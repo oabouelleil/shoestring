@@ -12,6 +12,7 @@ intents.voice_states = True
 
 client = discord.Client(intents=intents)
 
+user_chat_bots = {}  # Key:Author    Value:DiscordChatBot
 
 class DiscordChatBot(ChatBot):
 
@@ -22,8 +23,10 @@ class DiscordChatBot(ChatBot):
     async def stub_output(self, msg):
         await self.user.send(msg)
 
+    async def reset(self):
+        user_chat_bots[self.user] = DiscordChatBot(self.user)
 
-user_chat_bots = {}  # Key:Author    Value:DiscordChatBot
+
 
 token = open("token.txt", "r").read()
 
@@ -45,7 +48,7 @@ async def on_message(message):  # event that happens per any message.
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     # virtual_response("hello")
 
-    restart_commands = ["help", "hello", "restart", "reset"]  # IMPLEMENT HELP IF [0] IS HELP, THEN HELP
+    restart_commands = ["help", "hello", "restart", "reset", "hey", "howdy", "what's up"]  # IMPLEMENT HELP IF [0] IS HELP, THEN HELP
     match = process.extractOne(message.content.lower(), restart_commands)
     if match[1] > 60:
         if match[0] == restart_commands[0]:
@@ -71,6 +74,7 @@ async def on_member_join(member):
         member: discord.PermissionOverwrite(read_messages=True)
     }
     await member.guild.create_voice_channel(member.name, overwrites=overwrites)
+    user_chat_bots[member] = DiscordChatBot(member)
 
     print(f"{member} joined the {member.guild} server")
 
