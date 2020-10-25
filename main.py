@@ -18,6 +18,7 @@ client = discord.Client(intents=intents)
 class DiscordChatBot(ChatBot):
 
     def __init__(self, author):
+        super().__init__()
         self.user = author
 
     async def stub_output(self, msg):
@@ -46,8 +47,12 @@ async def on_message(message):  # event that happens per any message.
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     # virtual_response("hello")
 
-    restart_commands = ["hello", "restart", "reset"]
-    if process.extractOne(message.content.lower(), restart_commands)[1] > 60:
+    restart_commands = ["help", "hello", "restart", "reset"]  # IMPLEMENT HELP IF [0] IS HELP, THEN HELP
+    match = process.extractOne(message.content.lower(), restart_commands)
+    if match[1] > 60:
+        if match[0] == restart_commands[0]:
+            await user_chat_bots[message.author].print_help()
+            return
         user_chat_bots[message.author] = DiscordChatBot(message.author)
         problems = ', '.join(list(user_chat_bots[message.author].base_layer.keys()))
         await message.author.send("Hey, do you have any issues I can help you with? I know about {}".format(problems))
