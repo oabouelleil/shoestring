@@ -70,7 +70,7 @@ async def on_message(message):  # event that happens per any message.
 @client.event
 async def on_member_join(member):
     channel = discord.utils.get(member.guild.text_channels, name="general")
-    await channel.send("Check ur DMs")
+    await channel.send("Check ur DMs <@{}>".format(member.id))
     await member.send("Welcome to the server, if you need help, just send a message here and we'll "
                       "try our best to solve your issue")
     overwrites = {
