@@ -25,7 +25,7 @@ class ChatBot:
 
     def __init__(self):
         # best match minimum threshold
-        self.MATCH_CONFIDENCE_THRESHOLD = 64
+        self.MATCH_CONFIDENCE_THRESHOLD = 50
         self.RETRY_LIMIT = 2
         self.db_dict = gen_dict('./db/')
         self.base_layer = self.db_dict
