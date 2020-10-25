@@ -1,5 +1,7 @@
 import random
 
+from youtubesearchpython import SearchVideos
+
 from fuzzywuzzy import process
 
 from db_parser import gen_dict
@@ -34,12 +36,12 @@ class ChatBot:
         self.troubleshooting = False
         self.retry_counter = 0  # Count attempts to provide automatic help
         self.current_advice_index = -1  # Index within deepest layer list
+        self.prevcat = ""
 
     #   this two to be substituted by discord bot
     async def stub_input(self, msg):
         if not self.troubleshooting:
             confidence = 100
-            prevcat = ""
             looping = False
             while confidence >= self.MATCH_CONFIDENCE_THRESHOLD:
                 match = process.extract(msg, self.layer.keys())
@@ -62,7 +64,7 @@ class ChatBot:
 
                 if confidence_difference < 5:
                     print("Confidence difference only {}, asking user".format(confidence_difference))
-                    await self.stub_output(random.choice(sorry_messages).format(prevcat))
+                    await self.stub_output(random.choice(sorry_messages).format(self.prevcat))
                     return
 
                 self.retry_counter = 0
@@ -75,7 +77,7 @@ class ChatBot:
                     return
                 elif not looping:
                     await self.stub_output(random.choice(sorry_messages).format(subcat))
-                    prevcat = subcat
+                    self.prevcat = subcat
                 looping = True
 
         else:  # provide troubleshooting help
@@ -92,7 +94,12 @@ class ChatBot:
                 await self.stub_output("Did that work?")
             else:
                 await self.stub_output("", img_name="sad.gif")
-                await self.stub_output("Sorry I'm not too sure how to help :( Try speaking to a human.")
+                await self.stub_output("Sorry I'm not too sure how to help :( Try speaking to a human if the videos "
+                                       "below don't help.")
+                search = SearchVideos(self.prevcat, offset=1, mode="dict", max_results=2)
+                search = search.result()
+                for i in range(2):
+                    await self.stub_output(str(search['search_result'][i]['link']))
 
     # discord bot should implement exit functionality and input validations
     async def stub_output(self, msg, img_name=None):

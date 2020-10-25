@@ -14,6 +14,7 @@ client = discord.Client(intents=intents)
 
 user_chat_bots = {}  # Key:Author    Value:DiscordChatBot
 
+
 class DiscordChatBot(ChatBot):
 
     def __init__(self, author):
@@ -28,7 +29,6 @@ class DiscordChatBot(ChatBot):
 
     async def reset(self):
         user_chat_bots[self.user] = DiscordChatBot(self.user)
-
 
 
 token = open("token.txt", "r").read()
@@ -89,6 +89,11 @@ async def on_member_join(member):
 async def on_member_remove(member):
     voice_channel = discord.utils.get(member.guild.voice_channels, name=member.name)
     await voice_channel.delete(reason="Member Left Server")
+    if member.dm_channel is not None:
+        dm = member.dm_channel
+        async for message in dm.history(limit=300):
+            if message.author.name == "ShoestringApp":
+                await message.delete()
 
 
 @client.event
