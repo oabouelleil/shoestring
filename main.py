@@ -3,7 +3,6 @@ from tts import virtual_response
 from chatbot import ChatBot
 from fuzzywuzzy import process
 
-
 adjusted_noise = False
 
 intents = discord.Intents.default()

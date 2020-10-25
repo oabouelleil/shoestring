@@ -4,7 +4,7 @@ import os
 
 
 def parse_db(filename):
-    data=[]
+    data = []
 
     with open(filename) as csv_file:
 
@@ -13,14 +13,14 @@ def parse_db(filename):
 
         for row in csv_reader:
             if line_count == 0:
-                 line_count += 1
+                line_count += 1
 
             data.append(
                 [int(row["Index"]),
-                row["solution"],
-                int(row["priorityValue"]),
-                row["trouble"],
-                row["subTrouble"]])
+                 row["solution"],
+                 int(row["priorityValue"]),
+                 row["trouble"],
+                 row["subTrouble"]])
 
             line_count += 1
 
@@ -32,7 +32,7 @@ def take_priority(elem):
 
 
 def sort_solutions(arr):
-    arr.sort(key=take_priority, reverse = True)
+    arr.sort(key=take_priority, reverse=True)
 
 
 def increment_priority(index, arr):
@@ -46,20 +46,19 @@ def separate_troubles(arr):
     sep_dict = {}
 
     for row in arr:
-        if row[3] not in sep_dict: #if trouble not in dictionary
-            sep_dict[f"{row[3]}"] = {} #then create a new dictionary for trouble
+        if row[3] not in sep_dict:  # if trouble not in dictionary
+            sep_dict[f"{row[3]}"] = {}  # then create a new dictionary for trouble
 
-        if row[4] not in sep_dict[f"{row[3]}"]: #if subTrouble not in dictionary
-            sep_dict[f"{row[3]}"][f"{row[4]}"] = [] #then create a new array for subtrouble
+        if row[4] not in sep_dict[f"{row[3]}"]:  # if subTrouble not in dictionary
+            sep_dict[f"{row[3]}"][f"{row[4]}"] = []  # then create a new array for subtrouble
 
-        sep_dict[f"{row[3]}"][f"{row[4]}"].append(row[1]) #append to that subtrouble if subtrouble already exists
+        sep_dict[f"{row[3]}"][f"{row[4]}"].append(row[1])  # append to that subtrouble if subtrouble already exists
 
     return sep_dict
 
 
-def update_db(data): #updates priority values
+def update_db(data):  # updates priority values
     with open("solutions1.csv", mode="w", newline="") as solutionsFile:
-
         solutions_writer = csv.writer(solutionsFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         solutions_writer.writerow(["Index", "solution", "priorityValue", "trouble", "subTrouble"])
 
@@ -67,9 +66,8 @@ def update_db(data): #updates priority values
             solutions_writer.writerow(row)
 
 
-#import me! base_layer = gen_dict('./db/)
+# import me! base_layer = gen_dict('./db/)
 def gen_dict(dir):
-
     base_layer = {}
     for filename in os.listdir(dir):
         data = parse_db(dir + filename)
@@ -86,5 +84,3 @@ def gen_dict(dir):
 if __name__ == "__main__":
     out_dict = gen_dict('./db/')
     print(json.dumps(out_dict, sort_keys=True, indent=4))
-
-
