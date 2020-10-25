@@ -81,6 +81,7 @@ class ChatBot:
         else:  # provide troubleshooting help
             print("Troubleshooting")
             if msg == "yes":
+                await self.stub_output("", img_name="happy.gif")
                 await self.stub_output("Bye!")
                 await self.reset()
                 return
@@ -90,14 +91,17 @@ class ChatBot:
                 await self.stub_output(self.layer[self.current_advice_index])
                 await self.stub_output("Did that work?")
             else:
+                await self.stub_output("", img_name="sad.gif")
                 await self.stub_output("Sorry I'm not too sure how to help :( Try speaking to a human.")
 
     # discord bot should implement exit functionality and input validations
-    async def stub_output(self, msg):
+    async def stub_output(self, msg, img_name=None):
         print(msg)
 
     async def print_help(self, layer):
+        await self.stub_output("", img_name="confused.gif")
         problems = ', '.join(list(layer.keys()))
+        await self.stub_output("It's ok we all get confused sometimes!")
         await self.stub_output("Is it related to this? {}...".format(problems))
 
     async def reset(self):

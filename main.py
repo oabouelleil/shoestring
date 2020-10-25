@@ -20,8 +20,11 @@ class DiscordChatBot(ChatBot):
         super().__init__()
         self.user = author
 
-    async def stub_output(self, msg):
-        await self.user.send(msg)
+    async def stub_output(self, msg, img_name=None):
+        if img_name is None:
+            await self.user.send(msg)
+        else:
+            await self.user.send(file=discord.File("emotions/{}".format(img_name), filename="{}".format(img_name)))
 
     async def reset(self):
         user_chat_bots[self.user] = DiscordChatBot(self.user)
@@ -56,6 +59,8 @@ async def on_message(message):  # event that happens per any message.
             return
         user_chat_bots[message.author] = DiscordChatBot(message.author)
         problems = ', '.join(list(user_chat_bots[message.author].base_layer.keys()))
+
+        await user_chat_bots[message.author].stub_output("", img_name="hello.gif")
         await message.author.send("Hey, do you have any issues I can help you with? I know about {}".format(problems))
 
         return
