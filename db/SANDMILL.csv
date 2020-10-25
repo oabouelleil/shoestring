@@ -1,0 +1,56 @@
+Index,solution,priorityValue,trouble,subTrouble
+1,Assess the direction of the cutting force and provide adequate support or improve the fixture,0,Milling - Vibration,Weak fixture
+2,Reduce the cutting forces by decreasing the cutting depth,0,Milling - Vibration,Weak fixture
+3,Select a coarse and differentially pitched cutter with a more positive cutting action,0,Milling - Vibration,Weak fixture
+4,Select a geometry with a small corner radius and small parallel land,0,Milling - Vibration,Weak fixture
+5,"Select a fine-grain,uncoated insert, or a thinner coating",0,Milling - Vibration,Weak fixture
+6,Avoid machining where the workpiece has poor support against the cutting force,0,Milling - Vibration,Weak fixture
+7,Consider a square shoulder cutter (90 - degree entering angle) with a positive geometry,0,Milling - Vibration,Axially weak workpiece
+8,Select an inset with L-geometry,0,Milling - Vibration,Axially weak workpiece
+9,"Decrease axial cutting force - lower depth of cut, smaller corner radius and parallel land",0,Milling - Vibration,Axially weak workpiece
+10,Select a coarse-pitch cutter with differential pitch,0,Milling - Vibration,Axially weak workpiece
+11,Check ToolWear,0,Milling - Vibration,Axially weak workpiece
+12,Check tool holder run-out,0,Milling - Vibration,Axially weak workpiece
+13,Improve clamping of tools,0,Milling - Vibration,Axially weak workpiece
+15,Select smallest possible cutter diameter,0,Milling - Vibration,Milling square with weak spindle
+16,Select Select a positive and light-cutter and insert,0,Milling - Vibration,Milling square with weak spindle
+17,Try up milling ,0,Milling - Vibration,Milling square with weak spindle
+18,Check spindle deflection,0,Milling - Vibration,Milling square with weak spindle
+19,Try up milling,0,Milling - Vibration,Milling square with weak spindle
+20,Adjust the licking screw or replace the ball screw on conventional machines,0,Milling - Vibration,Irregular table feed
+21,Tighten machine feed mechanism,0,Milling - Vibration,Irregular table feed
+22,Reduce cutting speed Vc,0,Milling - Vibration,Cutting data
+23, increase feed Fz,0,Milling - Vibration,Cutting data
+24,change cutting depth Ap,0,Milling - Vibration,Cutting data
+25,Reduce overhang and improve stability,0,Milling - Vibration,Bad stability
+26,Program large corner radii with reduced feed rate,0,Milling - Vibration,Vibration in corners
+27,Improve chip evacuation by using rich and well directed cutting fluid or compressed air,0,Chip jamming,Insert corner damage/Edge chipping and breakage/Re-cutting of chips
+28,"Reduce feed, Fz",0,Chip jamming,Insert corner damage/Edge chipping and breakage/Re-cutting of chips
+29,Split deep cuts into several passes. ,0,Chip jamming,Insert corner damage/Edge chipping and breakage/Re-cutting of chips
+30,Try up milling.,0,Chip jamming,Insert corner damage/Edge chipping and breakage/Re-cutting of chips
+31,Use coarse pitch cutters,0,Chip jamming,Insert corner damage/Edge chipping and breakage/Re-cutting of chips
+32,Use solid Carbide end mills,0,Chip jamming,Insert corner damage/Edge chipping and breakage/Re-cutting of chips
+33,Evacuate chips effectively by compressed air,0,Re-cutting of chips,Cutting edge fractures. Harmful for tool lofe and security and chip jamming
+34,Change cutter position and tool path strategy,0,Re-cutting of chips,Cutting edge fractures. Harmful for tool lofe and security and chip jamming
+35,"Reduce dees, Fz and split deep cuts into several passes",0,Re-cutting of chips,Cutting edge fractures. Harmful for tool lofe and security and chip jamming
+36,"a) reduce the cutting speed, increase number of infeeds.\n b) Reduce largest infeed depth, check the diameter before threading",0,Troubleshooting for thread turning,Excesive temperature in cutting zone
+37,Improve coolant supply,0,Troubleshooting for thread turning,Inadequate supply of coolant
+38,Choose a grade with better resistance to plastic deformation,0,Troubleshooting for thread turning,Wrong grade
+39,Increase cutting speed,0,Troubleshooting for thread turning,Often occurs in stainless steel and low carbon steel
+40,"Choose an insert with good toughness, preferably PVD coated",0,Troubleshooting for thread turning,Unsuitable grade or cutting edge temperature too low
+41,"Turn to correct diameter before threading, 0.03-0.07mm radially larger than max ",0,Troubleshooting for thread turning,Wrong tuned diameter prior to threading
+42,Increase number of infeeds. Reduce size of the largest infeed,0,Troubleshooting for thread turning,Infeed series too tough
+43,Choose a tougher grade,0,Troubleshooting for thread turning,Wrong grade
+44,Change to C-geometry and use modified flank infeed,0,Troubleshooting for thread turning,Poor chip control
+45,Correct centre height,0,Troubleshooting for thread turning,Incorrect centre height
+46,Wrong grade. Choose a more wear resistant grade,0,Troubleshooting for thread turning,Highly abasive material
+47,Reduce cutting speed,0,Troubleshooting for thread turning,Cutting speed too high
+48,Reduce number of infeeds,0,Troubleshooting for thread turning,Infeed depths too shallow
+49,Correct centre height,0,Troubleshooting for thread turning,Insert is above centre line
+50,"Change method of flank infeed for F-and A- geometry: 3-5* from flank, for C-geometry: 1* from flank",0,Troubleshooting for thread turning,Incorrect method for flank infeed
+51,Change shim to obtain correct angle of inclination,0,Troubleshooting for thread turning,Insert inclination angle does not agree with the thread angle
+52,a) Use of soft claws.\nb)When using tail stock reduce component centeering hole,0,Troubleshooting for thread turning,workpiece clamping
+53,a) Minimize tool overhang. B) Make sure the clamping sleeve for bars is not worn.\nc) Use anti vibration bars dedicated for thread turning,0,Troubleshooting for thread turning,tool setup
+54,Increase cutting speed,0,Troubleshooting for thread turning,cutting data
+55,Lower the speed dramatically and try F-geometry,0,Troubleshooting for thread turning,cutting data
+56,Correct centre height,0,Troubleshooting for thread turning,Incorrect centre angle
